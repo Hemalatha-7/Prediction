@@ -1,0 +1,119 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="POST">{% csrf_token %}
+        <input type="text" name="uname" placeholder="Enter username" required>
+        <br></br>
+        <input type="password" name="pword" placeholder="Enter password" required>
+        <br></br>
+        <input type="password" name="pword2" placeholder="Reenter password" required>
+        <br></br>
+        <button type="submit">Register</button>
+    </form>
+    {% if result %}
+    <h2 style="color:red">ERROR:{{result}}</h2>
+    {% endif %}
+    <p>Already have an account??</p>
+    <a href="{% url 'login' %}">Login</a>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #e0eafc, #cfdef3);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 370px;
+            margin: 90px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            padding: 40px 30px 30px 30px;
+            text-align: center;
+        }
+        h1 {
+            color: #2d3a4b;
+            margin-bottom: 32px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #bfc9d9;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.2s;
+        }
+        input[type="text"]:focus, input[type="password"]:focus {
+            border: 1.5px solid #667eea;
+        }
+        button[type="submit"] {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 28px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+        }
+        button[type="submit"]:hover {
+            background: linear-gradient(90deg, #764ba2, #667eea);
+            transform: translateY(-2px) scale(1.04);
+        }
+        .error {
+            color: #e74c3c;
+            margin: 18px 0 0 0;
+            font-size: 1.1rem;
+        }
+        p {
+            margin-top: 24px;
+            color: #2d3a4b;
+        }
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="uname" placeholder="Enter username" required>
+            <input type="password" name="pword" placeholder="Enter password" required>
+            <input type="password" name="pword2" placeholder="Reenter password" required>
+            <button type="submit">Register</button>
+        </form>
+        {% if result %}
+            <div class="error">ERROR: {{ result }}</div>
+        {% endif %}
+        <p>Already have an account?</p>
+        <a href="{% url 'login' %}">Login</a>
+    </div>
+</body>

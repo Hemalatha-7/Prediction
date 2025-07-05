@@ -1,0 +1,142 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SME Model Prediction</title>
+</head>
+<body>
+    <h2>Enter Details for Prediction</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="platform">Platform:</label>
+        <input type="number" id="platform" name="platform" required><br><br>
+
+        <label for="likes">Likes:</label>
+        <input type="number" id="likes" name="likes" required><br><br>
+
+        <label for="comments">Comments:</label>
+        <input type="number" id="comments" name="comments" required><br><br>
+
+        <label for="shares">Shares:</label>
+        <input type="number" id="shares" name="shares" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+        <h3>Prediction: {{ result }}</h3>
+    {% endif %}
+    <a href="{% url 'home' %}">Home</a>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SME Model Prediction</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #e0eafc, #cfdef3);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 420px;
+            margin: 80px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            padding: 40px 30px 30px 30px;
+            text-align: center;
+        }
+        h2 {
+            color: #2d3a4b;
+            margin-bottom: 32px;
+        }
+        form {
+            margin-bottom: 24px;
+        }
+        label {
+            display: block;
+            margin: 18px 0 6px 0;
+            color: #4a5568;
+            font-weight: 500;
+            text-align: left;
+        }
+        input[type="number"] {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #bfc9d9;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            margin-bottom: 8px;
+            transition: border 0.2s;
+        }
+        input[type="number"]:focus {
+            border: 1.5px solid #667eea;
+        }
+        button[type="submit"] {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 28px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 18px;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+        }
+        button[type="submit"]:hover {
+            background: linear-gradient(90deg, #764ba2, #667eea);
+            transform: translateY(-2px) scale(1.04);
+        }
+        .result {
+            margin-top: 24px;
+            color: #2d3a4b;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        a {
+            display: inline-block;
+            margin-top: 18px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Details for Prediction</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="platform">Platform:</label>
+            <input type="number" id="platform" name="platform" required>
+
+            <label for="likes">Likes:</label>
+            <input type="number" id="likes" name="likes" required>
+
+            <label for="comments">Comments:</label>
+            <input type="number" id="comments" name="comments" required>
+
+            <label for="shares">Shares:</label>
+            <input type="number" id="shares" name="shares" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if result %}
+            <div class="result">Prediction: {{ result }}</div>
+        {% endif %}
+        <a href="{% url 'home' %}">Home</a>
+    </div>
+</body>

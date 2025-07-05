@@ -1,0 +1,90 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome {{user.username}}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="text" name="action" value="mlearning">Machine learning</button>
+        <button type="text" name="action" value="dlearning">Deep learning</button>
+    </form>
+    <a href="{% url 'login' %}">logout</a>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #e0eafc, #cfdef3);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            margin: 80px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            padding: 40px 30px 30px 30px;
+            text-align: center;
+        }
+        h1 {
+            color: #2d3a4b;
+            margin-bottom: 32px;
+        }
+        form {
+            margin-bottom: 24px;
+        }
+        button[type="text"], button[type="submit"] {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 28px;
+            margin: 10px 10px 0 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+        }
+        button[type="text"]:hover, button[type="submit"]:hover {
+            background: linear-gradient(90deg, #764ba2, #667eea);
+            transform: translateY(-2px) scale(1.04);
+        }
+        a {
+            display: inline-block;
+            margin-top: 18px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome {{user.username}}</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" name="action" value="mlearning">Machine learning</button>
+            <button type="submit" name="action" value="dlearning">Deep learning</button>
+        </form>
+        <a href="{% url 'login' %}">Logout</a>
+    </div>
+</body>
+</html>
