@@ -1,0 +1,8 @@
+Django
+NumPy
+Pandas
+Scikit-Learn
+TensorFlow
+IO
+Gunicorn
+
